@@ -10,4 +10,10 @@ But now we shift our attention to another version of the problem. Several genera
 
 Now what is the probability of winning? You should notice that since you now have potentially many choices on each bet, there is a notion of an optimal strategy such that given values of p, N, and current wealth, there is an optimal amount of coins k that you can bet that maximizes your chances of getting to N. Finding this optimal strategy (or strategies) is half the battle, and finding the overall probability of winning using this optimal strategy is the other half.
 
+### The Computational Approach and Results
+
+Only look at this section once you have exhausted all possible energy on the problem. A complex problem like this should be contemplated over the span of weeks and months, which will yield results slowly but steadily. It is very likely that you will get stuck on dead ends for long periods of time. Do not give up when this happens, as this is the part that makes the reward worth it.
+
+First on figuring out the optimal strategy. Basically, the intuition is as follows: if p > 0.5, then on each bet you are more likely to win than you are too lose. Furthermore, as the number of bets increases, it becomes exponentially less likely that the number of times you have lost exceeds the number of times you have won. As such, you can rely on a net increase in wealth over the long run. But how much do you bet on each turn? The minimum possible amount; one coin. This is because by betting a small amount of money, you can expect your wealth to fluctuate up and down by tiny amounts on each turn, but likely steadily climb as you bet more. In contrast, if you bet a lot, say all of your money, you stand a large chance of losing it all (1 - p), whereas by betting tiny amounts this is far less likely since the large number of turns means that we will be dealing with powers of (1 - p), which quickly deteriorate, much faster than the powers of p, which indicate the probabilities of our winning streaks.
+
 <!-- Problem statement, (discoveries, derivations, function derivations, observations), how to use, unexplored avenues -->
