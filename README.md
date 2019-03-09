@@ -21,3 +21,4 @@ If p < 0.5. You can't expect to win more times than lose over the long run. In f
 This complexity is why it is hard to come up with a rigorously optimal answer to this problem.
 
 <!-- Problem statement, (discoveries, derivations, function derivations, observations), how to use, unexplored avenues -->
+<!-- Incomplete -->
