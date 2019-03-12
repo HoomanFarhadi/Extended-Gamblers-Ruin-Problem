@@ -53,9 +53,8 @@ P(3) = P(3)
 P(6) = (1/p) P(3)
 
 P(2) = (P(6) - p) / (1 - p) = ((1/p) P(3) - p) / (1 - p)
-.
-.
-.
+
+...And so on.
 
 Through a similar manner, we can write all the probabilities for different values of i in terms of an arbitrary P(i), and upon solving the recursion we can simply substitue 
 
