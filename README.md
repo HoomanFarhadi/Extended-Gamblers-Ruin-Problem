@@ -36,14 +36,14 @@ We now shift our attention to how the probabilities of winning for the "optimal"
 ### Computational Approach and Recursion
 We are trying to find P(i) for any i given p and N, where P(i) is the probability of eventually reaching a wealth of N. One way we can do this (there were numerous attempts to find more elegent ways to no avail) is through recursion. Specifically, because the number of possible i is finite, the tree obtained through enumerating the set of possible outcomes from starting point i must eventually end at 0 or N, for which we know the values of, or reset to i, at which we can use recursion (actually, the recursion can happen with a differnt i, but in that case we just start our calculations with that value instead) For example, suppose N = 10, i = 3, and p < 0.5. The enumerating the possibilities of using startmax yields the following tree:
 
-     0    0    6
-     ^    ^    ^        //At each node, we bet according to strat max, and branch out according to the possible outcomes.
-     |    |    |        //For example, at node with i = 4, we bet all our wealth, either loosing it all, which bring our wealth to 0, or 
-0    2 -> 4 -> 8 -> 10  //gaining an additional 4, which brings our wealth to 8.
-^    ^
-|    |
-3 -> 6 -> 10
-
+          0    0    6
+          ^    ^    ^        
+          |    |    |        //At each node, we bet according to strat max, and branch out according to the possible outcomes.
+     0    2 -> 4 -> 8 -> 10  //For example, at node with i = 4, we bet all our wealth, either loosing it all, which would bring our
+     ^    ^                  //wealth to 0, or gaining an additional 4, which brings our wealth to 8.
+     |    |
+     3 -> 6 -> 10                            
+     
 We stop when we arrive at 6 for the second time because now we can solve the recursion. Note that i = 6 is what we will be solving, because that is where the recursion occured.
 
 However, this methodology allows us to calculate all the probabilities of all i that we pass over by simply keeping track of how different P(i) are related to each other. For example, in the above scenerio, we have:
